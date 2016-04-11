@@ -1,0 +1,54 @@
+<%= form_for(@member) do |f| %>
+
+
+<% if @member.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+  <ul>
+    <% @member.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+
+<fieldset>
+  <ul>
+    <li>
+      <%= f.label :User_ID %>
+      <%= f.text_field :uid, autofocus: true %>
+    </li>
+    <li>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </li>
+    <li>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </li>
+    <li>
+      <%= f.label :department %>
+      <%= f.text_field :dept %>
+    </li>
+    <li>
+      <%= f.label :location%>
+      <%= f.text_field :location %>
+    </li>
+    <li>
+      <%= f.label :service %>
+      <%= f.text_field :service %>
+    </li>
+    <li>
+      <%= f.label :extension %>
+      <%= f.text_field :extension %>
+    </li>
+  </ul>
+  <p>
+     <!-- Create a Submit Button -->
+    <%= f.submit %><br/>
+  </p>
+</fieldset>
+<% end %>
