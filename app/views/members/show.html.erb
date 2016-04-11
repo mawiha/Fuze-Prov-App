@@ -1,8 +1,21 @@
-<h2> User </h2>
+<h2> Team Member </h2>
 
-<%= link_to 'Create New Team Member', :new_member %>
+<%= link_to '<< Back to Team', :members %>
+</br>
+<%= link_to 'Edit Member', :edit_member %>
 
-<p>
-<%= @member.uid %>
-</p>
+
+
+<dl>
+  <dt>Member Name:</dt>
+  <dd><%= @member.first_name %> <%= @member.last_name%></dd>
+  <dt>User ID:</dt>
+  <dd><%= @member.uid %></dd>
+  <dt>Service:</dt>
+  <dd><%= @member.service %></dd>
+  <dt>Location:</dt>
+  <dd><%= @member.location %></dd>
+  <dt>Department:</dt>
+  <dd><%= @member.dept %></dd>
+</dl>
 
