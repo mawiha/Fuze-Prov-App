@@ -11,4 +11,5 @@ Member.delete_all
 
 member1 = Member.create!(uid: 'mhaase', first_name: 'mark', last_name: 'haase', service: 'uc power', dept: 'product', location: 'cambridge', extension: 6209)
 
+member2 = Member.create!(uid: 'jsmith', first_name: 'john', last_name: 'smith', service: 'uc core', dept: 'sales', location: 'cambridge', extension: 6210)
 

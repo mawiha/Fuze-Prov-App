@@ -1,4 +1,14 @@
 <h2> Team Members </h2>
 
+<p>
+<%= link_to 'Create New Team Member', :new_member %>
+</p>
+
 <h3> Your Fuze Team </h3>
+
+<% @members.each do |member| %>
+  <%= member.uid %> |  <%=member.first_name %>  <%= member.last_name %> |  <%= member.extension %> | <%= member.location %>
+  </br>
+<% end %>
+
 
