@@ -38,7 +38,7 @@ class MembersController < ApplicationController
     respond_to do |format|
 
       if @member.update(member_params)
-        format.html { redirect_to member_path(@member.id), notice: 'Successfully updated the movie' }
+        format.html { redirect_to member_path(@member.id), notice: 'Successfully updated member' }
         format.json { render :show, status: :ok, location: member_path(member.id) }
       else
         format.html { render :edit_member } # show the edit form again
