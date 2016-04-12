@@ -1,5 +1,7 @@
 class MembersController < ApplicationController
 
+  before_action :set_member, only: [:show, :edit, :update, :destroy]
+
   def index
     @members = Member.all
   end
@@ -23,7 +25,6 @@ class MembersController < ApplicationController
   end
 
   def show
-    @member = Member.find(params[:id])
     respond_to do |format|
       format.html
       format.json {render json: @member}
@@ -31,16 +32,13 @@ class MembersController < ApplicationController
   end
 
   def edit
-    @member = Member.find(params[:id])
   end
 
   def update
-    @member = Member.find(params[:id])
-
     respond_to do |format|
 
       if @member.update(member_params)
-        format.html { redirect_to member_path(@movie), notice: 'Successfully updated the movie' }
+        format.html { redirect_to member_path(@member.id), notice: 'Successfully updated the movie' }
         format.json { render :show, status: :ok, location: member_path(member.id) }
       else
         format.html { render :edit_member } # show the edit form again
@@ -50,7 +48,6 @@ class MembersController < ApplicationController
   end
 
   def destroy
-    @member = Member.find(params[:id])
     @member.destroy
 
     respond_to do |format|
@@ -63,6 +60,9 @@ end
 
   private
 
+    def set_member
+      @member = Member.find(params[:id])
+    end
 
     def member_params
       params.require(:member).permit(:first_name, :last_name, :dept, :location,:uid, :extension, :service)
