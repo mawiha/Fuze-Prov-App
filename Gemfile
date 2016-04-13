@@ -33,7 +33,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 # !! Added Gems !!
+# devise for authentication
 gem 'devise'
+# bower for bootstrap
+gem 'bower-rails'
+
 
 
 group :development, :test do

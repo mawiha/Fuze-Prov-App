@@ -19,7 +19,7 @@ class MembersController < ApplicationController
         format.html { redirect_to members_path(@member.id), notice: 'Member Created' }
         format.json { render :show, status: :created, location: @member}
       else
-        format.html { new_member_URL }
+        format.html {render :new}
         format.json {render json: @member.errors, status: :unprocessable_enitity}
       end
     end
@@ -42,7 +42,7 @@ class MembersController < ApplicationController
         format.html { redirect_to member_path(@member.id), notice: 'Successfully updated member' }
         format.json { render :show, status: :ok, location: member_path(member.id) }
       else
-        format.html { render :edit_member } # show the edit form again
+        format.html { render :edit } # show the edit form again
         format.json { render json: @member.errors, status: :unprocessable_entity }
       end
     end
