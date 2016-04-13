@@ -1,5 +1,6 @@
 class Member < ActiveRecord::Base
 
-  # validates :uid, presence: true
+  validates :group, presence: true
+  validates :uid, presence: true, uniqueness: true
 
 end

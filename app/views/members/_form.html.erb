@@ -45,10 +45,10 @@
       <%= f.label :extension %>
       <%= f.text_field :extension %>
     </li>
-    <!-- <li>   <%= f.label :group %> -->
-      <!-- Create a select/dropdown the movie rating -->
-      <!--<%= f.select :group, Group.all.map { |g| [g.name, g.id] }, include_blank: true %> -->
-    <!-- </li> -->
+    <li>
+      <%= f.label :group %>
+      <%= f.select :group, Group.all.map { |g| [g.name, g.id] }, include_blank: true %>
+    </li>
   </ul>
   <p>
      <!-- Create a Submit Button -->

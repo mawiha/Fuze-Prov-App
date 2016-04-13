@@ -16,10 +16,10 @@ class MembersController < ApplicationController
     respond_to do |format|
 
       if @member.save
-        format.html { redirect_to member_path(@member.id), notice: 'Member Created' }
+        format.html { redirect_to members_path(@member.id), notice: 'Member Created' }
         format.json { render :show, status: :created, location: @member}
       else
-        format.html { :new_member }
+        format.html { new_member_URL }
         format.json {render json: @member.errors, status: :unprocessable_enitity}
       end
     end
