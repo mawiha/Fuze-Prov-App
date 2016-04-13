@@ -1,0 +1,16 @@
+<%= link_to '<< Back to Groups', :groups %>
+</br>
+<%= link_to 'Edit Group', :edit_group %>
+</br>
+
+
+<dl>
+  <dt>Group Name:</dt>
+  <dd><%= @group.name %></dd>
+  <dt>Caller ID:</dt>
+  <dd><%= @group.caller_id %></dd>
+  <dt>Call Recording Settings:</dt>
+  <dd><%= @group.call_record %></dd>
+  <dt>Out of Service Number:</dt>
+  <dd><%= @group.out_of_service %></dd>
+</dl>

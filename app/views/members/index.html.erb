@@ -1,6 +1,8 @@
 <h2> Team Members </h2>
 
 <p>
+<%= link_to '<< Back to Home', :root %>
+</br>
 <%= link_to 'Create New Team Member', :new_member %>
 </p>
 
@@ -10,7 +12,6 @@
   <%= member.uid %> |  <%=member.first_name %>  <%= member.last_name %> |  <%= member.extension %> | <%= member.location %>
   |  <%= link_to 'View', member_path(member.id) %>
   |  <%= link_to 'Delete', member_path(member.id), method: :delete, data: { confirm: 'Are you sure?'}%>
-
 
   </br>
 <% end %>

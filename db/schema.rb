@@ -11,16 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160412000516) do
+ActiveRecord::Schema.define(version: 20160412005801) do
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.string   "caller_id"
+    t.string   "voicemail"
+    t.string   "call_record"
+    t.string   "out_of_service"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "members", force: :cascade do |t|
     t.string   "uid"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "service"
+    t.string   "group"
     t.string   "dept"
     t.string   "location"
     t.integer  "extension"
+    t.string   "group"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

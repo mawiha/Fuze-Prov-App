@@ -1,0 +1,48 @@
+
+
+<%= form_for(@group) do |f| %>
+
+
+<% if @group.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+  <ul>
+    <% @group.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+
+<fieldset>
+  <ul>
+    <li>
+      <%= f.label :Name %>
+      <%= f.text_field :name, autofocus: true, include_blank: false %>
+    </li>
+    <li>
+      <%= f.label :Outbound_Caller_ID %>
+      <%= f.text_field :caller_id %>
+    </li>
+    <li>
+      <%= f.label :Voicemail_Settings %>
+      <%= f.text_field :voicemail %>
+    </li>
+    <li>
+      <%= f.label :Call_Recording_Settings %>
+      <%= f.text_field :call_record %>
+    </li>
+    <li>
+      <%= f.label :Out_of_Service_Treatment %>
+      <%= f.text_field :out_of_service %>
+    </li>
+  </ul>
+  <p>
+     <!-- Create a Submit Button -->
+    <%= f.submit %><br/>
+  </p>
+</fieldset>
+<% end %>

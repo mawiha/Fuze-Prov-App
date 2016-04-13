@@ -22,6 +22,7 @@ class MembersController < ApplicationController
         format.html { :new_member }
         format.json {render json: @member.errors, status: :unprocessable_enitity}
       end
+    end
   end
 
   def show
@@ -47,6 +48,7 @@ class MembersController < ApplicationController
     end
   end
 
+
   def destroy
     @member.destroy
 
@@ -56,16 +58,16 @@ class MembersController < ApplicationController
     end
   end
 
-end
+
 
   private
 
-    def set_member
-      @member = Member.find(params[:id])
-    end
-
-    def member_params
-      params.require(:member).permit(:first_name, :last_name, :dept, :location,:uid, :extension, :service)
-    end
+  def set_member
+    @member = Member.find(params[:id])
   end
 
+  def member_params
+    params.require(:member).permit(:first_name, :last_name, :dept, :location, :uid, :extension, :service, :group)
+  end
+
+end

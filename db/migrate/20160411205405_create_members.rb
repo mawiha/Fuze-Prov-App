@@ -8,6 +8,7 @@ class CreateMembers < ActiveRecord::Migration
       t.string :dept
       t.string :location
       t.integer :extension
+      t.string :group
 
       t.timestamps null: false
     end

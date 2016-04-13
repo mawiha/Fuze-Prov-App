@@ -19,7 +19,7 @@
   <ul>
     <li>
       <%= f.label :User_ID %>
-      <%= f.text_field :uid, autofocus: true %>
+      <%= f.text_field :uid, autofocus: true, include_blank: false %>
     </li>
     <li>
       <%= f.label :first_name %>
@@ -45,6 +45,10 @@
       <%= f.label :extension %>
       <%= f.text_field :extension %>
     </li>
+    <!-- <li>   <%= f.label :group %> -->
+      <!-- Create a select/dropdown the movie rating -->
+      <!--<%= f.select :group, Group.all.map { |g| [g.name, g.id] }, include_blank: true %> -->
+    <!-- </li> -->
   </ul>
   <p>
      <!-- Create a Submit Button -->

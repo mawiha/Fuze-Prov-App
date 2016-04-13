@@ -1,0 +1,17 @@
+<h1> Group Policy Manager </h1>
+
+<%= link_to '<< Back to Home', :root %>
+</br>
+<%= link_to 'Create New Policy Group', :new_group %>
+</br>
+
+<p>
+<% @groups.each do |group| %>
+  <%= group.name %>
+  |  <%= link_to 'View', group_path(group.id) %>
+  |  <%= link_to 'Delete', group_path(group.id), method: :delete, data: { confirm: 'Are you sure?'}%>
+</p>
+</br>
+<% end %>
+
+
