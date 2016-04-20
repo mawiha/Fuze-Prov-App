@@ -13,4 +13,8 @@
   <dd><%= @group.call_record %></dd>
   <dt>Out of Service Number:</dt>
   <dd><%= @group.out_of_service %></dd>
+
 </dl>
+<p>
+<%= link_to_unless @group.members.empty?, "#{@group.members.count} Group members", members_path %>
+<p>

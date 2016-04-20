@@ -1,5 +1,7 @@
 class Member < ActiveRecord::Base
 
+  belongs_to :group
+
   SERVICES = ['uc basic', 'uc core', 'uc power']
 
   validates :group, presence: true
